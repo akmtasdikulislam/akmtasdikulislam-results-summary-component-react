@@ -1,4 +1,7 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
+import data from "./assets/data.json";
+import SummaryTopic from "./component/SummaryTopic/SummaryTopic.jsx";
 
 function App() {
   return (
@@ -18,58 +21,10 @@ function App() {
         <div className="summary">
           <p className="title">Summary</p>
           <div className="summary_topic_group">
-            <div className="summary_topic" id="reaction">
-              <div>
-                <img
-                  src="./assets/images/icon-reaction.svg"
-                  alt=""
-                  className="icon"
-                />
-                <p>Reaction</p>
-              </div>
-              <p className="summary_score">
-                <span>80</span> / 100
-              </p>
-            </div>
-            <div className="summary_topic" id="memory">
-              <div>
-                <img
-                  src="./assets/images/icon-memory.svg"
-                  alt=""
-                  className="icon"
-                />
-                <p>Memory</p>
-              </div>
-              <p className="summary_score">
-                <span>92</span> / 100
-              </p>
-            </div>
-            <div className="summary_topic" id="verbal">
-              <div>
-                <img
-                  src="./assets/images/icon-verbal.svg"
-                  alt=""
-                  className="icon"
-                />
-                <p>Verbal</p>
-              </div>
-              <p className="summary_score">
-                <span>61</span> / 100
-              </p>
-            </div>
-            <div className="summary_topic" id="visual">
-              <div>
-                <img
-                  src="./assets/images/icon-visual.svg"
-                  alt=""
-                  className="icon"
-                />
-                <p>Visual</p>
-              </div>
-              <p className="summary_score">
-                <span>72</span> / 100
-              </p>
-            </div>
+            {/* Dynaically Generation *Summary Topics* */}
+            {data.map((datum) => (
+              <SummaryTopic key={data.indexOf(datum)} data={datum} />
+            ))}
           </div>
           <button>Continue</button>
         </div>

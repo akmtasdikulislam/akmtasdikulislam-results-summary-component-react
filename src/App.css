@@ -226,7 +226,8 @@ body {
 }
 
 .attribution a {
-  color: var(--light-red);
+  color      : var(--light-red);
+  margin-left: .25em;
 }
 
 @media (max-width:375px) {
