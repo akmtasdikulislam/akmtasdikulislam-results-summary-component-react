@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import "./App.css";
-import data from "./assets/data.json";
-import SummaryTopic from "./component/SummaryTopic/SummaryTopic.jsx";
+import data from "./data.json";
 
 function App() {
   return (
@@ -22,8 +21,21 @@ function App() {
           <p className="title">Summary</p>
           <div className="summary_topic_group">
             {/* Dynaically Generation *Summary Topics* */}
-            {data.map((datum) => (
-              <SummaryTopic key={data.indexOf(datum)} data={datum} />
+            {data.map((item) => (
+              <div
+                className="summary_topic"
+                id={item.category.toLowerCase()}
+                key={data.indexOf(item)}
+              >
+                <div>
+                  <img src={`${item.icon}`} alt={item.category} />
+                  <p>{item.category}</p>
+                </div>
+                <p className="summary_score">
+                  <span>{item.score}</span> / 100
+                </p>
+              </div>
+              // <SummaryTopic key={data.indexOf(datum)} data={datum} />
             ))}
           </div>
           <button>Continue</button>

@@ -7,7 +7,7 @@ const SummaryTopic = (props) => {
     <>
       <div className="summary_topic" id={category.toLowerCase()}>
         <div>
-          <img src={`/src/${icon.split("./")[1]}`} alt="" className="icon" />
+          <img src={`${icon}`} alt={category} />
           <p>{category}</p>
         </div>
         <p className="summary_score">
